@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle ("cinemaman")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("demo cimema manager application")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany ("EastRiver, LTD.")]
 [assembly: AssemblyProduct ("")]
 [assembly: AssemblyCopyright ("kurain")]
 [assembly: AssemblyTrademark ("")]

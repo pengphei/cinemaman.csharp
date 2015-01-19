@@ -1,13 +1,12 @@
 using System;
+using Gtk;
 
 namespace cinemaman
 {
-	[System.ComponentModel.ToolboxItem(true)]
-	public partial class RightFrameMovie : Gtk.Bin
+	public class RightFrameMovie : Gtk.Frame
 	{
 		public RightFrameMovie ()
 		{
-			this.Build ();
 		}
 	}
 }
