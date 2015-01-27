@@ -22,12 +22,30 @@ namespace cinemaman
 			dbConn.Close();
 		}
 
+		public IList <CMHall> GetHallList()
+		{
+			return dbConn.Query<CMHall> ();
+		}
+		public IList <CMMovie> GetMovieList()
+		{
+			return dbConn.Query<CMMovie> ();
+		}
+		public IList <CMMoviePlay> GetPlayList()
+		{
+			return dbConn.Query<CMMoviePlay> ();
+		}
+
+		public IList<CMMoviePlay> GetPlayList(string hall, DateTime date)
+		{
+			return dbConn.Query<CMMoviePlay> (new CMMoviePlay () {HallName = hall});
+		}
+
 		public void TestWriteData()
 		{
 			// for CMHall
-			CMHall hall0 = new CMHall (0, "一号大厅",  "第一号大厅");
-			CMHall hall1 = new CMHall (1, "一号大厅",  "第一号大厅");
-			CMHall hall2 = new CMHall (2, "一号大厅",  "第一号大厅");
+			CMHall hall0 = new CMHall () {Name="一号大厅" ,  Info = "第一号大厅"};
+			CMHall hall1 = new CMHall() {Name="二号大厅" ,  Info = "第二号大厅"};
+			CMHall hall2 = new CMHall() {Name="三号大厅" ,  Info = "第三号大厅"};
 			dbConn.Store (hall0);
 			Console.WriteLine("Stored {0}", hall0);
 			dbConn.Store (hall1);
@@ -37,20 +55,20 @@ namespace cinemaman
 			dbConn.Commit ();
 
 			// for CMMovie
-			CMMovie movie0 = new CMMovie (0, "小鬼当家",  120, "英语", "儿童", 20);
+			CMMovie movie0 = new CMMovie (){Name = "小鬼当家",  Duration = 120, Language = "英语", Type = "儿童", Price = 20};
 			dbConn.Store (movie0);
-			CMMovie movie1 = new CMMovie (1, "七剑下天山",  110, "国语", "武侠", 20);
+			CMMovie movie1 = new CMMovie(){ Name = "七剑下天山",  Duration = 110, Language = "国语", Type = "武侠", Price = 20};
 			dbConn.Store (movie1);
-			CMMovie movie2 = new CMMovie (2, "魔术师",  120, "国语", "魔幻", 20);
+			CMMovie movie2 = new CMMovie (){ Name = "魔术师",  Duration = 120,  Language = "国语",  Type = "魔幻",  Price = 20};
 			dbConn.Store (movie2);
 			dbConn.Commit ();
 
 			// for CMMoviePlay
-			CMMoviePlay play0 = new CMMoviePlay (0, 1,1,  Convert.ToDateTime("2007-8-1"), Convert.ToDateTime("2007-8-1"), 20, 15);
+			CMMoviePlay play0 = new CMMoviePlay () { HallName = "一号大厅", MovieName = "小鬼当家", BeginTime = Convert.ToDateTime("2007-8-1"), EndTime =  Convert.ToDateTime("2007-8-1"),  Language = "英语",  Type = "儿童",  Price =  20, Rest = 15};
 			dbConn.Store (play0);
-			CMMoviePlay play1 = new  CMMoviePlay (0, 1,1,  Convert.ToDateTime("2008-8-1"), Convert.ToDateTime("2008-8-1"), 20, 15);
+			CMMoviePlay play1 = new  CMMoviePlay () { HallName = "一号大厅", MovieName = "小鬼当家", BeginTime = Convert.ToDateTime("2008-8-1"), EndTime =  Convert.ToDateTime("2008-8-1"),  Language = "英语",  Type = "儿童",  Price =  20, Rest = 15};
 			dbConn.Store (play1);
-			CMMoviePlay play2 = new  CMMoviePlay (0, 1,1,  Convert.ToDateTime("2009-8-1"), Convert.ToDateTime("2009-8-1"), 20, 15);
+			CMMoviePlay play2 = new  CMMoviePlay () { HallName = "一号大厅", MovieName = "小鬼当家", BeginTime = Convert.ToDateTime("2009-8-1"), EndTime =  Convert.ToDateTime("2009-8-1"),  Language = "英语",  Type = "儿童",  Price =  20, Rest = 15};
 			dbConn.Store (play2);
 			dbConn.Commit ();
 		}
