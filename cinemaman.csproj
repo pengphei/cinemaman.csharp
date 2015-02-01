@@ -62,6 +62,21 @@
       <Package>db4o</Package>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>NPOI\dotnet4\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>NPOI\dotnet4\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>NPOI\dotnet4\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>NPOI\dotnet4\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>NPOI\dotnet4\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.cs" />

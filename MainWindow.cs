@@ -113,7 +113,10 @@ namespace cinemaman
 
 		public void updatePlayList(string hall, DateTime day)
 		{
-			winRightMisc.updateList (cmdb.GetPlayList (hall, day));
+			DateTime beginTime = new DateTime (day.Year, day.Month, day.Day, 0, 0, 0);
+			DateTime endTime = new DateTime (day.Year, day.Month, day.Day, 0, 0, 0).AddDays(1);
+
+			winRightMisc.updateList (cmdb.GetPlayList (hall, beginTime, endTime));
 		}
 	}
 }

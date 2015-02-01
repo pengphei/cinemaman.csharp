@@ -35,9 +35,11 @@ namespace cinemaman
 			return dbConn.Query<CMMoviePlay> ();
 		}
 
-		public IList<CMMoviePlay> GetPlayList(string hall, DateTime date)
+		public IList<CMMoviePlay> GetPlayList(string hall, DateTime beginTime, DateTime endTime)
 		{
-			return dbConn.Query<CMMoviePlay> (new CMMoviePlay () {HallName = hall});
+			return dbConn.Query<CMMoviePlay> (delegate(CMMoviePlay play) { 
+				return play.BeginTime >= beginTime && play.BeginTime < endTime && play.HallName == hall; 
+			});
 		}
 
 		public void TestWriteData()
