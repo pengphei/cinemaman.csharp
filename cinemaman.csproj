@@ -90,6 +90,10 @@
     <Compile Include="RightFrameHall.cs" />
     <Compile Include="RightFrameMisc.cs" />
     <Compile Include="RightFrameMovie.cs" />
+    <Compile Include="CMExcel.cs" />
+    <Compile Include="CMExcelByDate.cs" />
+    <Compile Include="CMExcelByHall.cs" />
+    <Compile Include="CMExcelTables.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

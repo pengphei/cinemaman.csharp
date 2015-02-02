@@ -8,6 +8,7 @@ namespace cinemaman
 	{
 		private IObjectContainer dbConn = null;
 		private String dbPath;
+
 		public CMDB (String path)
 		{
 			dbPath = path;
